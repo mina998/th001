@@ -1,5 +1,25 @@
 <?php
 
+function p2($v){
+    $o = print_r($v, true);
+    error_log($o);
+}
+
+/**
+ * 获取文章特色图片
+ *
+ * @param int $post_id 文章ID
+ * @return string 特色图片URL
+ */
+function get_featured_image_src($post_id) {
+    // 获取文章特色图片
+    $image_id = get_post_thumbnail_id($post_id);
+    if($image_id){
+        return wp_get_attachment_url($image_id);
+    }
+    return '';
+}
+
 /**
  * 加载必要文件
  *
@@ -50,7 +70,7 @@ add_action('init', 'register_d8_menus');
 function append_custom_menu_item($items, $args) {
     // 仅在顶部菜单添加邮箱链接
     if ($args->theme_location === 'top-menu') {
-        $email = '123456.com';
+        $email = get_field('e-mail', 'option');
         $items .= sprintf(
             '<li><i class="iconfont icon-Mail"></i><a href="mailto:%s">%s</a></li>',
             esc_attr($email),
@@ -76,4 +96,28 @@ function add_target_blank_to_specific_menu($items, $args) {
     }
     return $items;
 }
-add_filter('wp_nav_menu_objects', 'add_target_blank_to_specific_menu', 10, 2);
+// add_filter('wp_nav_menu_objects', 'add_target_blank_to_specific_menu', 10, 2);
+
+/**
+ * 自定义案例列表每页显示数量
+ * @param [type] $query
+ * @return void
+ */
+function custom_case_posts_per_page( $query ) {
+    if ( is_post_type_archive( 'case' ) && $query->is_main_query() ) {
+        $query->set( 'posts_per_page', 9 ); // 每页显示 5 篇
+    }
+}
+add_action( 'pre_get_posts', 'custom_case_posts_per_page' );
+
+/**
+ * 自定义应用列表每页显示数量
+ * @param [type] $query
+ * @return void
+ */
+function custom_application_posts_per_page( $query ) {
+    if ( is_post_type_archive( 'application' ) && $query->is_main_query() ) {
+        $query->set( 'posts_per_page', 9 ); // 每页显示 5 篇
+    }
+}
+add_action( 'pre_get_posts', 'custom_application_posts_per_page' );

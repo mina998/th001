@@ -1791,9 +1791,6 @@ nav li:nth-of-type(6),nav li:nth-of-type(7),nav li:nth-of-type(8) {
     .loop-application .loop-application-x {
     padding-bottom: 3rem;
   }
-.loop-application, .loop-application .loop-application-xx {
-  margin-bottom: -80px;
-}
 .loop-application:last-child {
   margin-bottom: 0px;
 }
@@ -1865,7 +1862,7 @@ nav li:nth-of-type(6),nav li:nth-of-type(7),nav li:nth-of-type(8) {
 	transform:scale(1.15);
 }
 .inab_usd {
-	padding-top:30px;
+	padding-top:100px;
 }
 .inausbo {
 	margin-top:20px;
@@ -2069,7 +2066,7 @@ footer {
 }
 .fo_ou1 {
 	float:left;
-	width:24%;
+	width:35%;
 }
 .fo_ou2 {
 	float:left;
@@ -2083,7 +2080,7 @@ footer {
 }
 .fo_ou4 {
 	float:right;
-	width:27%;
+	width:55%;
 }
 .fo_ou4 form {
 	position:relative;
@@ -3491,10 +3488,10 @@ footer {
 	transform:translateX(10px);
 }
 .indus_listul {
-	margin-top:60px;
+	/*margin-top:60px;*/
 	padding:60px 0;
-	border-top:1px solid #c9cdce;
-	border-bottom:1px solid #c9cdce;
+	/*border-top:1px solid #c9cdce;
+	border-bottom:1px solid #c9cdce;*/
 }
 .indus_listul li {
 	margin-bottom:60px;
@@ -3508,7 +3505,7 @@ footer {
 	width:444px;
 }
 .inliri {
-	margin-left:444px;
+	/*margin-left:444px;*/
 	padding-left:55px;
 }
 .inliri h3 {

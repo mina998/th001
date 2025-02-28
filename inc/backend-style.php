@@ -44,4 +44,4 @@ add_action( 'admin_menu', function(){
 });
 
 // ----- 隐藏前台admin_bar ----- 
-show_admin_bar(false);
+// show_admin_bar(false);

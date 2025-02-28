@@ -159,7 +159,7 @@ class PrimaryMenu {
             <dl class="hy_class">
                 <?php foreach ($level_2_items as $item) : ?>
                 <dd>
-                    <a target="_blank" href="/">
+                    <a target="_blank" href="<?php echo $item->url; ?>">
                         <div class="changpic">
                             <img src="<?php echo $this->get_item_image($item); ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="">
                         </div>
@@ -203,7 +203,7 @@ class PrimaryMenu {
                             <?php $level_3_items = $this->get_current_level_items($item); ?>
                             <?php foreach($level_3_items as $child): ?>
                             <dd>
-                                <a target="_blank" href="/">
+                                <a target="_blank" href="<?php echo $child->url; ?>">
                                     <div class="changpic">
                                         <img src="<?php echo $this->get_item_image($child); ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="">
                                     </div>

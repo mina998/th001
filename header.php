@@ -1,3 +1,12 @@
+<?php
+    $post_type = get_post_type();
+
+    if( in_array($post_type, ['product']) ) {
+        $fix_class = 'hpage';
+    } else {
+        $fix_class = '';
+    }
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 
@@ -26,7 +35,7 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <!-- header -->
-    <header id="header">
+    <header id="header" class="<?php echo $fix_class; ?>">
         <!-- header_top -->
         <div class="h_top">
             <?php
@@ -68,16 +77,7 @@
 
                 <div class="head_rcon">
                     <!-- search -->
-                    <div id="search-button" class="search-button">
-                        <i class="iconfont icon-fangdajing">
-                        </i>
-                        <form method="get" action="/" class="searchform" style="height: 0px;">
-                            <input type="text" class="text" name="s" id="keyword" placeholder="Search">
-                            <button type="submit" title="search">
-                                <i class="iconfont icon-fangdajing"></i>
-                            </button>
-                        </form>
-                    </div>
+                    <?php get_template_part('sections/search-form'); ?>
                     <!-- search end-->
                     <!-- language -->
                     <div class="language">

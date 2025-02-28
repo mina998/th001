@@ -14,14 +14,7 @@ get_header();
 <div class="w_p_main">
     <!-- Breadcrumb -->
     <div class="su_txt">
-        <div class="warper">
-            <p>
-                <i class="iconfont icon-zhuye"></i>
-                <a target="_blank" id="ss" href="">Home</a>&gt;
-                <a target="_blank" id="ss" href="">Products</a>&gt;
-                <span class="current">Gantry Crane</span>
-            </p>
-        </div>
+        <?php get_template_part('sections/breadcrumb'); ?>
     </div>
     <!-- Breadcrumb end-->
     <!-- service -->
